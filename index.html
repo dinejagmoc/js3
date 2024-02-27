@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sample 2</title>
+</head>
+<body>
+    
+    <h1>Text Concatenator</h1>
+    <table>
+        <tr>
+            <td>
+                <label for="str1">First Name: </label>
+            </td>
+            <td>
+                <input type="text" name="str1" id="str1" placeholder="Enter First Name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="str2">Middle Name: </label>
+            </td>
+            <td>
+                <input type="text" name="str2" id="str2" placeholder="Enter Middle Name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="str3">Last Name: </label>
+            </td>
+            <td>
+                <input type="text" name="str3" id="str3" placeholder="Enter Last Name">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="GenerateFullname()">Generate Fullname</button>
+                <button onclick="clearEntries()">Clear Entries</button>
+            </td>
+        </tr>
+    </table>
+
+    <p>Full Name: <span id="concatTxt" style="color: red; font-weight: bold;"></span></p>
+    
+    <script src="main.js"></script>
+</body>
+</html>
+Ian
+Ian Ronzel
+const str1Txt = document.getElementById("str1");
+const str2Txt = document.getElementById("str2");
+const str3Txt = document.getElementById("str3");
+const concatTxt = document.getElementById("concatTxt");
+
+function GenerateFullname() {
+    if (str1Txt.value == "" || str2Txt.value == "" || str3Txt.value == "") {
+        alert("You should fill out all the entries");
+    } else {
+        concatTxt.innerHTML = str1Txt.value + " " + str2Txt.value + " " + str3Txt.value;
+    }
+}
+
+function clearEntries() {
+    str1Txt.value = "";
+    str2Txt.value = "";
+    str3Txt.value = "";
+    concatTxt.innerHTML = "";
+}
